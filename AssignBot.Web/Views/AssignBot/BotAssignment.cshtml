@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewData["Title"] = "BotAssignment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#assign">Assign</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#attributes">Attributes</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#indents">Indents</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#previewDetails">Preview</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            <div id="assign" class="container tab-pane active">
+                <br>
+                <div class="col-sm-12">
+                    <div class="form-group row ">
+                        <label for="botName" class="col-sm-2 col-form-label">Bot Name</label>
+                        <div class="col-sm-6">
+                            <select id="botName" class="form-control">
+                                <option selected>Choose Bot...</option>
+                                <option>Scrum</option>
+                                <option>Retro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="skill" class="col-sm-2 col-form-label">Skill's</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="skill" placeholder="Skill's">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="assignedTeams" class="col-sm-2 col-form-label">Assigned Teams</label>
+                        <div class="col-sm-6">
+                            <select id="assignedTeams" class="form-control">
+                                <option selected>Choose Team...</option>
+                                <option>NightWings</option>
+                                <option>Nightro</option>
+                                <option>Alpha</option>
+                                <option>oxigen</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="BrowseImage" class="col-sm-2 col-form-label">Browse Image</label>
+                        <div class="custom-file col-sm-6">
+                            <input type="file" name="img[]" class="file" accept="image/*">
+                            <div class="input-group my-3">
+                                <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+                                <div class="input-group-append">
+                                    <button type="button" class="browse btn btn-primary">Browse...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label for="BrowseImage" class="col-sm-2 col-form-label">Bot Image</label>
+                        <div class="ml-2 col-sm-6">
+                            <img src="https://placehold.it/100x100" id="preview" height="150px" width="150px"
+                                 class="img-thumbnail">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-8 text-right">
+                            <a type="button" href="#attributes" data-toggle="tab" class="btn btn-primary">Next</a>
+
+                            <!-- <button type="submit" class="btn btn-primary">Add Assignment</button>
+                    <button type="button" class="btn btn-primary">Edit Assignment</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="attributes" class="container tab-pane fade">
+                <br>
+                <div class="col-sm-12">
+                    <div class="form-group row ">
+                        <label for="scrumTeam" class="col-sm-2 col-form-label">Scrum Team</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="scrumTeam" placeholder="Scrum Team">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="webExURL" class="col-sm-2 col-form-label">Web-Ex URL</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="webExURL" placeholder="Web-Ex URL">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="releaseTrain" class="col-sm-2 col-form-label">Release Train</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="releaseTrain" placeholder="Release Train">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ALMToolIdentity" class="col-sm-2 col-form-label">ALM Tool Identity</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ALMToolIdentity" placeholder="ALM Tool Identity">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="ALMToolURL" class="col-sm-2 col-form-label">ALM Tool URL</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ALMToolURL" placeholder="ALM Tool URL">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="standupTime" class="col-sm-2 col-form-label">Standup Time</label>
+                        <div class="col-sm-6">
+                            <input type="type" class="form-control" id="ALMToolURL" placeholder="Standup Time">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="retrospectiveDay" class="col-sm-2 col-form-label">Retrospective Day</label>
+                        <div class="col-sm-6">
+                            <input type="type" class="form-control" id="retrospectiveDay" placeholder="Retrospective Day">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <a type="button" href="#assign" data-toggle="tab" class="btn btn-primary">Previous</a>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <a type="button" href="#indents" data-toggle="tab" class="btn btn-primary">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="indents" class="container tab-pane fade">
+                <br>
+                <div class="col-sm-12">
+                    <div class="form-group row ">
+                        <label for="intentName" class="col-sm-2 col-form-label">Intent Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="intentName" placeholder="Intent Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="utterance1" class="col-sm-2 col-form-label">Utterance 1</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="utterance1" placeholder="Utterance 1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="utterance2" class="col-sm-2 col-form-label">Utterance 2</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="utterance2" placeholder="Utterance 2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="utterance3" class="col-sm-2 col-form-label">Utterance 3</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="utterance3" placeholder="Utterance 3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="utterance4" class="col-sm-2 col-form-label">Utterance 4</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="utterance4" placeholder="Utterance 4">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="utterance5" class="col-sm-2 col-form-label">Utterance 5</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="utterance5" placeholder="Utterance 5">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <a type="button" href="#indents" data-toggle="tab" class="btn btn-primary">Previous</a>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <a type="button" href="#previewDetails" data-toggle="tab" class="btn btn-primary">Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="previewDetails" class="container tab-pane fade">
+                <br>
+                <h3>Preview</h3>
+                <p>Preview</p>
+            </div>
+
+        </div>
+    </div>
+<script>
+    $(document).on("click", ".browse", function () {
+        var file = $(this).parents().find(".file");
+        file.trigger("click");
+    });
+
+    $(document).on('input[type="file"]').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $("#file").val(fileName);
+        var reader = new FileReader();
+        reader.onload = function (a) {
+            // get loaded data and render thumbnail.
+            document.getElementById("preview").src = a.target.result;
+        };
+        // read the image file as a data URL.
+        reader.readAsDataURL(e.target.files[0]);
+    });
+</script>

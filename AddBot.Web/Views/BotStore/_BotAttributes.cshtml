@@ -1,0 +1,42 @@
+﻿@model BotAttributeMaster
+
+<div class="modal fade" id="addAttribute" tabindex="-1" role="dialog" aria-labelledby="addattribute" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width:70%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addattribute">Add Attributes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label asp-for="AttributeName"></label>
+                        <input asp-for="AttributeName" class="form-control" />
+                        <span asp-validation-for="AttributeName" class="text-danger"></span>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-success" id="btnAdd">Add</button>
+            </div>
+            <div id="divAttributes"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#divAttributes").load("/BotStore/getview",
+            { attributeName: $("#AttributeName").val(), viewName: "_DisplayAttribute" });
+
+        $("#btnAdd").click(function () {
+            $("#divAttributes").load("/BotStore/getview",
+                { attributeName: $("#AttributeName").val(), viewName: "_DisplayAttribute" });
+        });
+    });
+</script>

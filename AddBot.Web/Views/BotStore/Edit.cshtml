@@ -1,0 +1,79 @@
+﻿@model BotMasterModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table td, .table th {
+        padding: 0.20rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+</style>
+<div id="modal-placeholder" style="width:70%"></div>
+
+<form method="post" enctype="multipart/form-data" asp-controller="BotStore" asp-action="saveeditbot">
+    <div class="col-sm-12">
+        <div class="form-group row ">
+            <label for="BotName" class="col-sm-2 col-form-label">Bot Name</label>
+            <div class="col-sm-6">
+                @*<input type="text" class="form-control" id="BotName" required name="BotName" placeholder="Bot Name">*@
+                <input asp-for="BotName" class="form-control" placeholder="Bot Name" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="SkillName" class="col-sm-2 col-form-label">Bot Skill's</label>
+            <div class="col-sm-6">
+                @*<input type="text" class="form-control" id="SkillName" required name="SkillName" placeholder="Bot Skill's">*@
+                <input asp-for="SkillName" class="form-control" placeholder="Bot Skill's" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="BotStatus" class="col-sm-2 col-form-label">Bot Status</label>
+            <div class="col-sm-6">
+                <select id="BotStatus" required asp-for="BotStatus" class="form-control">
+                    <option value="">Choose Status...</option>
+                    <option value="true">Available</option>
+                    <option value="false">UnAvailable</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="BotImageID" class="col-sm-2 col-form-label">Image Name</label>
+            <div class="col-sm-6">
+                <select asp-for="BotImageID"
+                        class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.BotImageDetails,"BotImageID", "BotImageName"))">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="attribute" class="col-sm-2 col-form-label">Attribute</label>
+            <div class="col-sm-8">
+                <button type="button" class="btn btn-outline-success" data-toggle="ajax-modal" data-target="#addAttribute" data-url="@Url.Action("BotAttributes")">
+                    Add Attribute
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="customIntends" class="col-sm-2 col-form-label">Custom Intends</label>
+            <div class="col-sm-8">
+                <button type="button" class="btn btn-outline-success" data-toggle="ajax-modal" data-target="#addcustomintend" data-url="@Url.Action("BotCustomIntend")">
+                    Add Intends
+                </button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+

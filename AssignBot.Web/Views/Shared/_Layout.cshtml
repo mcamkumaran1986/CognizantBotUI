@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AssignBot.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/AssignmentPortal.css">
+    @*<script src="~/js/AssignmentPortal.js"></script>*@
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <!-- Vertical navbar -->
+    <div class="vertical-nav bg-dark" id="sidebar">
+        <div class="py-4 px-3 mb-4 bg-dark">
+            <div class="media-body">
+                <div class="row px-3">
+                    <img class="profile-pic mr-3" src="~/images/Bot.png">
+                    <span>
+                        <h3 class="text-white font-weight-normal">Senthil A</h3>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-white font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
+
+        <ul class="nav flex-column bg-dark mb-0">
+            <li class="nav-item">
+                <a class="nav-link text-light font-italic bg-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light font-italic bg-dark" asp-area="" asp-controller="Home" asp-action="AboutBot">
+                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                    About
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light font-italic bg-dark" asp-area="" asp-controller="AssignBot" asp-action="BotAssignment">
+                    <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                    Assign Bot
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End vertical navbar -->
+    <div class="page-content p-1" id="content">
+        <!-- Toggle button -->
+        <nav class="navbar navbar-expand-lg py-3 navbar-light shadow mb-5 rounded sticky-top"
+             style=" background-color:#bdd2ee;">
+            <button id="sidebarCollapse" type="button" class="btn btn-light bg-light  shadow-sm px-2 mb-1">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <a class="navbar-brand">
+                <!-- Logo Image -->
+                <img src="~/images/SiteLogo.png" width="45" class="d-inline-block align-middle mr-1">
+                <!-- Logo Text -->
+                <span class="font-weight-bold">Agile Assignment Portal</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        @*<footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2020 - AssignBot.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/AssignmentPortal.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
